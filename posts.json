@@ -1,0 +1,13 @@
+[
+  {
+    "id": "post_001",
+    "platform": "whatsapp",
+    "type": "template",
+    "templateName": "hello_world",
+    "templateLanguage": "en_US",
+    "templateParams": [],
+    "recipients": ["234XXXXXXXXXX"],
+    "scheduledTime": "2026-08-15T09:00:00Z",
+    "status": "pending"
+  }
+]
