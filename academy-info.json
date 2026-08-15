@@ -1,0 +1,144 @@
+{
+  "academy_name": "Tahleem Academy",
+  "tagline": "Excellence in Islamic Education",
+  "description": "Learn Quran, Tajweed, Arabic Language and Islamic Studies with certified scholars — live, interactive, and structured for every level.",
+  "website": "https://tahleemacademy.vercel.app",
+  "contact": {
+    "email": "Tahleemacademy09@gmail.com",
+    "whatsapp": "+234 816 331 0471"
+  },
+  "stats": {
+    "lessons_delivered": "500+",
+    "certified_scholars": 3,
+    "student_satisfaction": "95%",
+    "core_programs": 4
+  },
+  "courses": [
+    {
+      "name": "General Revision",
+      "arabic_name": "المراجعة",
+      "description": "General revision sessions open to all levels."
+    },
+    {
+      "name": "Arabic Foundations",
+      "arabic_name": "قواعد اللغة العربية",
+      "description": "Develops proficiency in reading, writing, speaking, and understanding Arabic — grammar (Nahw), morphology (Sarf), vocabulary, and conversational skills."
+    },
+    {
+      "name": "Al-Majlis",
+      "arabic_name": "المجلس الجامع",
+      "description": "General gathering/class sessions open to all levels."
+    },
+    {
+      "name": "Al-Islamiyyah (Fiqh)",
+      "arabic_name": "المواد الإسلامية",
+      "description": "Islamic rulings on worship and daily life — purification, prayer, fasting, zakah, and other essential Fiqh matters."
+    },
+    {
+      "name": "Qawa'idul Imla",
+      "arabic_name": "قواعد الإملاء",
+      "description": "Rules of Arabic orthography — spelling, punctuation, and correct writing of Arabic letters and words."
+    },
+    {
+      "name": "Al-Qur'an",
+      "arabic_name": "القرآن",
+      "description": "Correct recitation (Tajweed), memorization (Hifdh), and understanding of meanings."
+    }
+  ],
+  "pricing": {
+    "currency": "NGN (Naira)",
+    "registration_fee": {
+      "amount": 5000,
+      "note": "One-time fee. Covers entrance exam + 3-stage recitation proficiency test + account setup. Paid once before first subscription."
+    },
+    "plans": [
+      {
+        "level": "Beginner",
+        "arabic_name": "المبتدئ",
+        "monthly_fee": 5000,
+        "suits": "New students, ages 8+",
+        "includes": [
+          "Quran reading from scratch (Noorani Qaida)",
+          "Basic Tajweed rules",
+          "Arabic alphabet & beginner vocabulary",
+          "Foundational Islamic Studies",
+          "Weekly live class sessions",
+          "Al-Majlis group chat",
+          "Course materials & recordings"
+        ]
+      },
+      {
+        "level": "Intermediate",
+        "arabic_name": "المتوسط",
+        "monthly_fee": 6000,
+        "most_popular": true,
+        "suits": "Students who completed beginner or equivalent",
+        "includes": [
+          "Full Tajweed rules with practice",
+          "Surah memorization (Al-Hifdh)",
+          "Arabic grammar (Nahw & Sarf basics)",
+          "Fiqh & Aqeedah studies",
+          "Bi-weekly live sessions",
+          "Al-Majlis group chat",
+          "Assignments & progress tracking",
+          "Access to recordings library"
+        ]
+      },
+      {
+        "level": "Advanced",
+        "arabic_name": "المتقدم",
+        "monthly_fee": 7000,
+        "suits": "Students with strong Quran & Arabic foundation",
+        "includes": [
+          "Advanced Tajweed & Qira'at",
+          "Full Quran memorization program",
+          "Advanced Arabic language & literature",
+          "Detailed Fiqh, Aqeedah & Tafseer",
+          "Weekly live sessions + private sessions",
+          "Al-Majlis group chat + direct teacher access",
+          "Transcripts & certificates",
+          "All recordings & materials",
+          "Priority exam & assessment slots"
+        ]
+      }
+    ],
+    "term_option": "Per-term (3 months) payment also available as an alternative to monthly.",
+    "payment_method": "Secure payment via Paystack",
+    "grace_period": "7-day grace period if a payment is missed"
+  },
+  "enrollment_process": {
+    "steps": [
+      "Step 1: Pay one-time registration fee of ₦5,000",
+      "Step 2: Fill onboarding form + written entrance exam",
+      "Step 3: 3-stage recitation proficiency test (audio submission → AI accuracy score → live teacher session)",
+      "Step 4: Admin reviews all results and assigns final level"
+    ],
+    "level_score_breakdown": {
+      "entrance_exam": "40%",
+      "ai_accuracy": "20%",
+      "teacher_evaluation": "40%",
+      "note": "Final level assignment also requires admin approval."
+    },
+    "recitation_test_detail": {
+      "stage_1": "Audio Submission — record reciting Surah Al-Fatiha (or assigned Surah), ~5 minutes",
+      "stage_2": "AI Accuracy Score — instant word-accuracy score via Groq Whisper transcription",
+      "stage_3": "Live Teacher Session — 10-15 minute live evaluation of Tajweed, Makharij, and fluency, scheduled within 48 hours"
+    }
+  },
+  "instructors": [
+    {
+      "name": "Ustadh Mustapha (Abu Yazeed)",
+      "specialty": "Foundations & Arabic Specialist"
+    },
+    {
+      "name": "Ustadh Muhyidden (Abu Zineerah)",
+      "specialty": "General Arabic & Conceptual Clarification"
+    },
+    {
+      "name": "Ustadh Yusuf (Al-Fawa'iz)",
+      "specialty": "Qur'anic Sciences & Tajweed"
+    }
+  ],
+  "mission": "To provide comprehensive Islamic education that nurtures spiritual growth, academic excellence, and moral character, preparing students to be confident, practicing Muslims who contribute positively to society.",
+  "notes_for_bot": "If a question cannot be answered from this data, direct the user to WhatsApp +234 816 331 0471 or email Tahleemacademy09@gmail.com, or visit https://tahleemacademy.vercel.app for full details and enrollment."
+}
