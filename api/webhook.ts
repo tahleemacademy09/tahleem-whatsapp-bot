@@ -27,17 +27,17 @@ Only reply if the message is clearly about one of these topics:
 - Course/curriculum information (Quran, Hifdh, Arabic, Islamic studies)
 - General inquiries about Tahleem Academy's programs
 
-WHEN TO STAY SILENT:
-- Personal messages, casual chat, or anything unrelated to Tahleem Academy's programs
-- If unsure whether the message qualifies, do NOT respond — respond with exactly: NO_REPLY
+WHEN THE MESSAGE IS UNRELATED:
+- If the message is personal, casual chat, or anything unrelated to Tahleem Academy's programs, do NOT try to answer it. Instead reply with exactly this fallback (after the disclosure line):
+"I'm here to help with registration, fees, classes, and programs. For anything else, please reach out to us directly on WhatsApp at +234 816 331 0471."
 
 You will be given up-to-date academy information (courses, pricing, enrollment steps, contact info) as JSON context below. Use ONLY that data for facts — do not invent fees, schedules, or details not present in it. If something isn't covered, direct the user to WhatsApp +234 816 331 0471 or email Tahleemacademy09@gmail.com.
 
 REQUIRED DISCLOSURE:
-Every reply you send must begin with exactly this line, then a blank line, then your response:
+Every reply you send — including the fallback for unrelated messages — must begin with exactly this line, then a blank line, then your response:
 "🤖 This is an automated response from Tahleem Academy."
 
-If you decide not to reply, output exactly: NO_REPLY (nothing else).`;
+Always reply with something — never leave a message unanswered.`;
 
 // ---- Helper: fetch latest academy info ----
 async function getAcademyInfo(): Promise<string> {
@@ -77,7 +77,7 @@ async function askGemini(userMessage: string, academyInfo: string): Promise<stri
   const data = await res.json();
   console.log("Gemini raw response:", JSON.stringify(data));
   const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
-  return reply || "NO_REPLY";
+  return reply || "🤖 This is an automated response from Tahleem Academy.\n\nI'm here to help with registration, fees, classes, and programs. For anything else, please reach out to us directly on WhatsApp at +234 816 331 0471.";
 }
 
 // ---- Helper: send a WhatsApp message back ----
@@ -140,9 +140,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       const reply = await askGemini(text, academyInfo);
       console.log("Gemini decided reply:", reply);
 
-      if (reply && reply !== "NO_REPLY") {
-        await sendWhatsAppReply(from, reply);
-      }
+      await sendWhatsAppReply(from, reply);
 
       res.status(200).send("EVENT_RECEIVED");
     } catch (err) {
