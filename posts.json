@@ -6,11 +6,8 @@
     "templateName": "hello_world",
     "templateLanguage": "en_US",
     "templateParams": [],
-    "recipients": [
-      "2348163310471"
-    ],
-    "scheduledTime": "2026-08-14T00:00:00Z",
-    "status": "failed",
-    "error": "Unsupported post request. Object with ID 'messages' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api"
+    "recipients": ["234XXXXXXXXXX"],
+    "scheduledTime": "2026-08-15T09:00:00Z",
+    "status": "pending"
   }
 ]
