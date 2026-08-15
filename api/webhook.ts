@@ -75,6 +75,7 @@ async function askGemini(userMessage: string, academyInfo: string): Promise<stri
   });
 
   const data = await res.json();
+  console.log("Gemini raw response:", JSON.stringify(data));
   const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
   return reply || "NO_REPLY";
 }
@@ -83,7 +84,7 @@ async function askGemini(userMessage: string, academyInfo: string): Promise<stri
 async function sendWhatsAppReply(to: string, text: string) {
   const url = `https://graph.facebook.com/${API_VERSION}/${PHONE_NUMBER_ID}/messages`;
 
-  await fetch(url, {
+  const res = await fetch(url, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${WHATSAPP_TOKEN}`,
@@ -96,6 +97,8 @@ async function sendWhatsAppReply(to: string, text: string) {
       text: { body: text },
     }),
   });
+  const data = await res.json();
+  console.log("WhatsApp send response:", JSON.stringify(data));
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -116,21 +119,26 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   // --- Incoming message (POST request) ---
   if (req.method === "POST") {
     try {
+      // Log the full incoming payload so we can see its real shape
+      console.log("Incoming webhook body:", JSON.stringify(req.body));
+
       const entry = req.body?.entry?.[0];
       const change = entry?.changes?.[0];
       const message = change?.value?.messages?.[0];
 
       if (!message) {
-        // Not a user message (could be a status update) — acknowledge and ignore
+        console.log("No message object found in payload — likely a status update, ignoring.");
         res.status(200).send("EVENT_RECEIVED");
         return;
       }
 
       const from = message.from;
       const text = message.text?.body || "";
+      console.log("Extracted message:", { from, text });
 
       const academyInfo = await getAcademyInfo();
       const reply = await askGemini(text, academyInfo);
+      console.log("Gemini decided reply:", reply);
 
       if (reply && reply !== "NO_REPLY") {
         await sendWhatsAppReply(from, reply);
