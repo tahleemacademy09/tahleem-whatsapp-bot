@@ -6,7 +6,9 @@
   "scripts": {
     "publish": "tsx scripts/publish.ts"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@vercel/node": "^3.2.24"
+  },
   "devDependencies": {
     "typescript": "^5.5.4",
     "tsx": "^4.16.2",
